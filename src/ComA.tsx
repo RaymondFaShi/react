@@ -1,11 +1,14 @@
 
 import React, { useContext } from 'react';
+import { context } from './Store/User';
 
-class ComA extends React.Component {
-    public render() {
-        return (
-            <div id="com_a"></div>
-        );
-    }
+
+const ComA = () => {
+    const { user, dispatch } = useContext( context );
+    return (
+        <div id="com_a">
+            A:{user.counter}
+        </div>
+    );
 }
 export default ComA;
